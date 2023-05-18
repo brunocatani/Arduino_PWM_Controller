@@ -19,10 +19,8 @@
 ````
 #include <Arduino.h>
 
-
 #define BUTTON_PIN 2
 #define PWM 9
-
 
 int estado_botao = 0;
 int pwm = 0;
@@ -31,31 +29,41 @@ unsigned long tempo_acionado = 0;
 unsigned long tempo_delay = 50;
 
 void setup() {
+  // Configura os pinos como entrada/saída
   pinMode(PWM, OUTPUT);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
 }
 
 void loop() {
-
   int leitura = digitalRead(BUTTON_PIN);
 
+  // Verifica se houve uma mudança no estado do botão
   if (leitura != ultimo_estado_botao) {
     ultimo_estado_botao = leitura;
     if (leitura == HIGH) {  
+      // Armazena o tempo em que o botão foi acionado
       tempo_acionado = millis();
     }
   }
 
+  // Verifica se o botão está pressionado e se já passou o tempo limitador de atraso
   if (leitura == HIGH && ((millis() - tempo_acionado) > tempo_delay)) {
+    // Incrementa o valor do PWM
     pwm += 64;
+    
+    //Ao atingir um valor maior de 255 o "contador é resetado a 0"
     if (pwm > 255) {
-          pwm = 0;
-          }
+      pwm = 0;
+    }
   }
 
+  // Aplica o valor do PWM ao motor
   analogWrite(PWM, pwm);
+
+  // Aguarda um pequeno intervalo antes de reiniciar o loop
   delay(50);
 }
+
 
 ````
 
