@@ -1,8 +1,9 @@
 # Arduino_PWM_Controller
 
 1. [Introdução ao PWM](#introdução-ao-pwm)
-    \n A Modulação por Largura de Pulso (PWM) é uma técnica em que um sinal digital é convertido em um sinal analógico pulsante. O sinal é composto por pulsos de largura variável, onde a relação entre o tempo em que o pulso está em nível alto (ligado) e o tempo em que está em nível baixo (desligado) determina a potência média transmitida.
-3. [Componentes necessários](#componentes-necessários)
+
+    A Modulação por Largura de Pulso (PWM) é uma técnica em que um sinal digital é convertido em um sinal analógico pulsante. O sinal é composto por pulsos de largura variável, onde a relação entre o tempo em que o pulso está em nível alto (ligado) e o tempo em que está em nível baixo (desligado) determina a potência média transmitida.
+4. [Componentes necessários](#componentes-necessários)
    - Arduino Nano
    - Motor DC 5V
    - Bateria 5V
