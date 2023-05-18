@@ -69,5 +69,5 @@ void loop() {
 
 5. [Funcionamento do projeto](#funcionamento-do-projeto)
 
-    Ao acionar o botão o motor recebe um sinal PWM que aumenta 64 bits a cada acionamento, isso equivalento a 25%, 50%, 75% e 100% do range total de velocidade relativa possivel do motor DC.
+    Ao acionar o botão o motor recebe um sinal PWM que aumenta 64 bits a cada acionamento, equivalente a 0%, 25%, 50%, 75% e 100% respectivamente do range total de velocidade relativa possivel do motor DC.
     Ao atingir um valor acima de 255 o contador é resetado ao valor 0, reiniciando o ciclo.
