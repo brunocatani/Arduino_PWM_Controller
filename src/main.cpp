@@ -30,7 +30,7 @@ void loop() {
   if (leitura == HIGH && ((millis() - tempo_acionado) > tempo_delay)) {
     pwm += 64;
     if (pwm > 255) {
-          pwm = 1;
+          pwm = 0;
           }
   }
 
