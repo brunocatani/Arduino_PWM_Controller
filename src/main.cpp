@@ -28,7 +28,7 @@ void loop() {
   }
 
   if (leitura == HIGH && ((millis() - tempo_acionado) > tempo_delay)) {
-    pwm += 64;
+    pwm += 63;
     if (pwm > 255) {
           pwm = 0;
           }
