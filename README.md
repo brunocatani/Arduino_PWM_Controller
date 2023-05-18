@@ -49,7 +49,7 @@ void loop() {
   // Verifica se o botão está pressionado e se já passou o tempo limitador de atraso
   if (leitura == HIGH && ((millis() - tempo_acionado) > tempo_delay)) {
     // Incrementa o valor do PWM
-    pwm += 64;
+    pwm += 63;
     
     //Ao atingir um valor maior de 255 o "contador é resetado a 0"
     if (pwm > 255) {
@@ -69,5 +69,5 @@ void loop() {
 
 5. [Funcionamento do projeto](#funcionamento-do-projeto)
 
-    Ao acionar o botão o motor recebe um sinal PWM que aumenta 64 bits a cada acionamento, equivalente a 0%, 25%, 50%, 75% e 100% respectivamente do range total de velocidade relativa possivel do motor DC.
+    Ao acionar o botão o motor recebe um sinal PWM que aumenta 64 bits a cada acionamento saindo a partir de 1, equivalente a 0%, 25%, 50%, 75% e 100% respectivamente do range total de velocidade relativa possivel do motor DC.
     Ao atingir um valor acima de 255 o contador é resetado ao valor 0, reiniciando o ciclo.
